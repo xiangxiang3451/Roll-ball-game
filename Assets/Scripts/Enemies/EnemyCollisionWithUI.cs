@@ -7,16 +7,15 @@ public class EnemyCollisionWithUI : MonoBehaviour
 
     private void Start()
     {
-        failPanel.SetActive(false); // hide dulu
+        failPanel.SetActive(false);
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             failPanel.SetActive(true);
-            Time.timeScale = 0f; // pause game
+            Time.timeScale = 0f;
         }
     }
 
@@ -29,6 +28,6 @@ public class EnemyCollisionWithUI : MonoBehaviour
     public void BackToMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu"); // Ganti nama scene kalau perlu
+        SceneManager.LoadScene("MainMenu"); // ganti sesuai nama scene kamu
     }
 }
