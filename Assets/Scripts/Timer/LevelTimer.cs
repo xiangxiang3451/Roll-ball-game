@@ -11,12 +11,11 @@ public class LevelTimer : MonoBehaviour
     public TextMeshProUGUI timerText;
     public GameObject failPanel; // sama seperti panel saat kena enemy
 
-    void Start() 
+    private void Start()
     {
+        Time.timeScale = 1f; // PENTING! Reset ke normal saat scene dimulai
         currentTime = levelTime;
-
-        if (failPanel != null)
-            failPanel.SetActive(false); // pastikan panel hidden di awal
+        failPanel.SetActive(false);
     }
 
 
@@ -40,33 +39,17 @@ public class LevelTimer : MonoBehaviour
             TimeUp();
         }
     }
-
     void TimeUp()
     {
-        if (failPanel != null)
-        {
-            Time.timeScale = 0f;
-            failPanel.SetActive(true);
-        }
-        else
-        {
-            Debug.LogWarning("FailPanel belum disambungkan di Inspector!");
-        }
+        Time.timeScale = 0f;
+        failPanel.SetActive(true);
     }
 
-
-    //public void RestartLevel()
-    //{
-      //  Time.timeScale = 1f;
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    //}
     public void RestartLevel()
     {
-        Debug.Log("Restart button pressed!"); // Tambah ini
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
 
     public void BackToMenu()
     {
