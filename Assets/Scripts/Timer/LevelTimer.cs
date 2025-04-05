@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 
 public class LevelTimer : MonoBehaviour
 {
@@ -47,14 +48,28 @@ public class LevelTimer : MonoBehaviour
 
     public void RestartLevel()
     {
-        Time.timeScale = 1f;
+        StartCoroutine(RestartAfterUnpause());
+    }
+
+    IEnumerator RestartAfterUnpause()
+    {
+        Time.timeScale = 1f; // unpause dulu
+        yield return new WaitForSecondsRealtime(0.1f); // delay sedikit biar sistem UI reset
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+
     public void BackToMenu()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(BackToMenuAfterUnpause());
     }
+
+    IEnumerator BackToMenuAfterUnpause()
+    {
+        Time.timeScale = 1f;
+        yield return new WaitForSecondsRealtime(0.1f);
+        SceneManager.LoadScene("MainMenu"); // ganti sesuai scene lo
+    }
+
 
 }
