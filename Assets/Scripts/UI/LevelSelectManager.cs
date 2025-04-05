@@ -13,6 +13,10 @@ public class LevelSelectManager : MonoBehaviour
         SceneManager.LoadScene("Level2");
     }
 
+    public void LoadLevel3()
+    {
+        SceneManager.LoadScene("Level3");
+    }
     // 返回主菜单
     public void BackToMainMenu()
     {
@@ -25,8 +29,8 @@ public class LevelSelectManager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-            
-            Application.Quit();
+
+        Application.Quit();
 #endif
     }
 }
