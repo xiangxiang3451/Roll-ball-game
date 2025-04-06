@@ -1,6 +1,6 @@
 ## Roll a ball game
 
-Created by :[Rafly]: https://github.com/raflyaulya  and [chang]: https://github.com/xiangxiang3451
+Created by :  [Rafly](https://github.com/raflyaulya) and [Chang]( https://github.com/xiangxiang3451)
 > This is a course design and after understanding the basics of unity, you can develop this simple little game
 
 ### Main task
