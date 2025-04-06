@@ -17,7 +17,7 @@ public class LevelSelectManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level3");
     }
-    // 返回主菜单
+
     public void BackToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
