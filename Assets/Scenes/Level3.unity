@@ -741,7 +741,7 @@ MonoBehaviour:
   - {fileID: 1294888196}
   - {fileID: 898314161}
   - {fileID: 430114974}
-  speed: 2
+  speed: 30
 --- !u!114 &44986052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4852,7 +4852,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8324f9d244d46e64cb09235c5eadd4ba, type: 2}
+  - {fileID: 2100000, guid: 315d661eadb47034d851ef63ec97f7e0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9136,7 +9136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1356665236}
   pointB: {fileID: 1148371727}
-  speed: 3
+  speed: 30
 --- !u!114 &1116950125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11759,7 +11759,7 @@ MonoBehaviour:
   - {fileID: 526387914}
   - {fileID: 180368680}
   - {fileID: 74887418}
-  speed: 2
+  speed: 30
 --- !u!114 &1509837146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14056,7 +14056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1556800939}
   pointB: {fileID: 2008140567}
-  speed: 3
+  speed: 30
 --- !u!114 &1771969240
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,22 +6,25 @@ using System.Collections;
 
 public class LevelTimer : MonoBehaviour
 {
-    public float levelTime = 20f; // durasi waktu per level
+    public float levelTime = 20f;
     private float currentTime;
+    private bool isTimerRunning = true; // 添加计时器运行状态
 
     public TextMeshProUGUI timerText;
-    public GameObject failPanel; // sama seperti panel saat kena enemy
+    public GameObject failPanel;
 
     private void Start()
     {
-        Time.timeScale = 1f; // PENTING! Reset ke normal saat scene dimulai
+        Time.timeScale = 1f;
         currentTime = levelTime;
         failPanel.SetActive(false);
+        isTimerRunning = true; // 初始时计时器运行
     }
-
 
     void Update()
     {
+        if (!isTimerRunning) return; // 如果计时器停止，不再更新
+
         currentTime -= Time.deltaTime;
         currentTime = Mathf.Clamp(currentTime, 0, levelTime);
         timerText.text = "Time: " + Mathf.Ceil(currentTime).ToString();
@@ -32,7 +35,7 @@ public class LevelTimer : MonoBehaviour
         }
         else
         {
-            timerText.color= Color.white;
+            timerText.color = Color.white;
         }
 
         if (currentTime <= 0)
@@ -40,8 +43,17 @@ public class LevelTimer : MonoBehaviour
             TimeUp();
         }
     }
+
+    // 添加停止计时器的方法
+    public void StopTimer()
+    {
+        isTimerRunning = false;
+    }
+
     void TimeUp()
     {
+        if (PlayerController.GameCompleted) return; // 如果游戏已完成，不执行失败逻辑
+
         Time.timeScale = 0f;
         failPanel.SetActive(true);
     }
@@ -53,11 +65,10 @@ public class LevelTimer : MonoBehaviour
 
     IEnumerator RestartAfterUnpause()
     {
-        Time.timeScale = 1f; // unpause dulu
-        yield return new WaitForSecondsRealtime(0.1f); // delay sedikit biar sistem UI reset
+        Time.timeScale = 1f;
+        yield return new WaitForSecondsRealtime(0.1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
 
     public void BackToMenu()
     {
@@ -68,8 +79,6 @@ public class LevelTimer : MonoBehaviour
     {
         Time.timeScale = 1f;
         yield return new WaitForSecondsRealtime(0.1f);
-        SceneManager.LoadScene("MainMenu"); // ganti sesuai scene lo
+        SceneManager.LoadScene("MainMenu");
     }
-
-
 }
