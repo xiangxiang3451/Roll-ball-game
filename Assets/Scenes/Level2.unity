@@ -3282,6 +3282,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3157067681350824874, guid: 1ad78b0afe3c72e4daba71f65ca3ae84, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2365800258741777991}
+    - targetCorrespondingSourceObject: {fileID: 3157067681350824874, guid: 1ad78b0afe3c72e4daba71f65ca3ae84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2365800258741777992}
   m_SourcePrefab: {fileID: 100100000, guid: 1ad78b0afe3c72e4daba71f65ca3ae84, type: 3}
 --- !u!4 &2365800258741777986 stripped
 Transform:
@@ -3332,6 +3335,20 @@ MonoBehaviour:
   winText: {fileID: 957877225}
   coinCollectSound: {fileID: 8300000, guid: e795132cf8da9fc4aaf38fd8cde09ab0, type: 3}
   backgroundMusic: {fileID: 274580608}
+--- !u!114 &2365800258741777992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831502381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03698fd651b1f9940b71bba603f0f800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  failPanel: {fileID: 1656571146}
+  fallThresholdY: -5
 --- !u!1001 &3968271140605973571
 PrefabInstance:
   m_ObjectHideFlags: 0
